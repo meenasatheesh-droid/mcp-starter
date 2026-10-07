@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+  }
+
+  /* Sleek financial terminal scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(140, 149, 159, 0.25);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(140, 149, 159, 0.45);
+  }
+}
+
+@keyframes flashGreen {
+  0% { background-color: rgba(38, 166, 154, 0.35); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flashRed {
+  0% { background-color: rgba(239, 83, 80, 0.35); }
+  100% { background-color: transparent; }
+}
+
+.flash-up {
+  animation: flashGreen 1s ease-out;
+}
+
+.flash-down {
+  animation: flashRed 1s ease-out;
+}
